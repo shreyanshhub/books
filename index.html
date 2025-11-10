@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Deeksha ❤️ - Dostoevsky's Complete Works</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E6D5F5;
+            --secondary: #FFD6E8;
+            --background: #FFF8F0;
+            --accent: #C8B4E8;
+            --text-dark: #4A4A4A;
+            --text-light: #666666;
+            --white: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .hero h2 {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .heart {
+            font-size: 2rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            50% { transform: scale(1); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 0.9rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Search Section */
+        .search-section {
+            padding: 60px 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 1.1rem;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            background: var(--white);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(200, 180, 232, 0.2);
+            font-family: 'Lato', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 6px 25px rgba(200, 180, 232, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-light);
+        }
+
+        /* Books Section */
+        .books-section {
+            padding: 40px 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 10px;
+        }
+
+        .book-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInCard 0.6s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        @keyframes fadeInCard {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(200, 180, 232, 0.3);
+        }
+
+        .book-card.hidden {
+            display: none;
+        }
+
+        .book-year {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .book-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .read-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+        }
+
+        .read-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(200, 180, 232, 0.5);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            padding: 25px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .book-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text-dark);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--primary);
+        }
+
+        .made-with-love {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .modal-content {
+                width: 95%;
+                height: 95vh;
+            }
+
+            .modal-title {
+                font-size: 1.3rem;
+            }
+
+            .book-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .books-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* No Results Message */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            display: none;
+        }
+
+        .no-results.active {
+            display: block;
+        }
+
+        .no-results p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>For Deeksha <span class="heart">❤️</span></h1>
+            <h2>A Complete Collection of Dostoevsky's Masterpieces</h2>
+        </div>
+        <div class="scroll-indicator">↓ Scroll to explore ↓</div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <input 
+                type="text" 
+                class="search-input" 
+                id="searchInput" 
+                placeholder="Search for a book..." 
+                aria-label="Search books"
+            >
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section class="books-section">
+        <h2 class="section-title">The Complete Library</h2>
+        <div class="books-grid" id="booksGrid"></div>
+        <div class="no-results" id="noResults">
+            <p>No books found. Try a different search term.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-content">
+            <h2>About This Collection</h2>
+            <p>
+                Fyodor Dostoevsky (1821-1881) was a Russian novelist, philosopher, and journalist. 
+                His works explore the depths of human psychology, morality, and spirituality. 
+                These timeless masterpieces continue to inspire readers worldwide.
+            </p>
+            <p>
+                This collection brings together all of Dostoevsky's major works in one beautiful place, 
+                making it easy to explore his profound literary legacy.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Attribution &amp; Copyright</h3>
+            <p>
+                All books provided by <a href="https://www.gutenberg.org" target="_blank" rel="noopener">Project Gutenberg</a>.
+            </p>
+            <p>
+                These books are in the public domain and free to read. 
+                Project Gutenberg is a volunteer effort to digitize and archive cultural works.
+            </p>
+            <p class="made-with-love">
+                Website made with love for Deeksha ❤️
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="bookModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <button class="close-btn" id="closeModal" aria-label="Close modal">×</button>
+            </div>
+            <div class="modal-body">
+                <iframe class="book-iframe" id="bookIframe" title="Book reader"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Books data
+        const books = [
+            {
+      "title": "Crime and Punishment",
+      "year": 1866,
+      "description": "A psychological thriller exploring the mind of Raskolnikov, who commits murder and wrestles with guilt, morality, and redemption.",
+      "url": "https://www.gutenberg.org/files/2554/2554-h/2554-h.htm",
+      "gutenberg_id": 2554,
+      "category": "Major Novel"
+    },
+    {
+      "title": "The Brothers Karamazov",
+      "year": 1880,
+      "description": "Dostoevsky's final masterpiece exploring faith, doubt, free will, and morality through the story of three brothers and their father.",
+      "url": "https://www.gutenberg.org/files/28054/28054-h/28054-h.html",
+      "gutenberg_id": 28054,
+      "category": "Major Novel"
+    },
+    {
+      "title": "The Idiot",
+      "year": 1869,
+      "description": "Prince Myshkin, a Christ-like innocent, navigates the corrupt and morally bankrupt Russian aristocracy.",
+      "url": "https://www.gutenberg.org/files/2638/2638-h/2638-h.html",
+      "gutenberg_id": 2638,
+      "category": "Major Novel"
+    },
+    {
+      "title": "The Possessed (Demons)",
+      "year": 1872,
+      "description": "A dark political novel examining nihilism, revolutionary ideology, and the destructive nature of radical movements.",
+      "url": "https://www.gutenberg.org/files/8117/8117-h/8117-h.htm",
+      "gutenberg_id": 8117,
+      "category": "Major Novel"
+    },
+    {
+      "title": "The House of the Dead",
+      "year": 1862,
+      "description": "Based on Dostoevsky's own harrowing experiences in a Siberian labor camp, a profound meditation on suffering and human dignity.",
+      "url": "https://www.gutenberg.org/files/1662/1662-h/1662-h.htm",
+      "gutenberg_id": 1662,
+      "category": "Major Novel"
+    },
+    {
+      "title": "The Insulted and Humiliated",
+      "year": 1861,
+      "description": "A tale of love, betrayal, and the suffering of the downtrodden in 19th century St. Petersburg.",
+      "url": "https://www.gutenberg.org/files/2638/2638-h/2638-h.html",
+      "gutenberg_id": 2638,
+      "category": "Novel"
+    },
+    {
+      "title": "A Raw Youth (The Adolescent)",
+      "year": 1875,
+      "description": "The coming-of-age story of Arkady, an illegitimate son searching for his identity and place in Russian society.",
+      "url": "https://www.gutenberg.org/ebooks/28694",
+      "gutenberg_id": 28694,
+      "category": "Novel"
+    },
+    {
+      "title": "Netochka Nezvanova",
+      "year": 1849,
+      "description": "An unfinished novel following the tragic childhood of a young girl and her experiences with a failed musician.",
+      "url": "https://www.gutenberg.org/ebooks/36034",
+      "gutenberg_id": 36034,
+      "category": "Novel (Unfinished)"
+    }
+  ],
+  "novellas": [
+    {
+      "title": "Notes from Underground",
+      "year": 1864,
+      "description": "One of the first existentialist works, exploring the psychology of alienation through a bitter, isolated narrator.",
+      "url": "https://www.gutenberg.org/files/600/600-h/600-h.htm",
+      "gutenberg_id": 600,
+      "category": "Novella"
+    },
+    {
+      "title": "Poor Folk",
+      "year": 1846,
+      "description": "Dostoevsky's debut novel, an epistolary tale of two poor relatives struggling with poverty and loneliness in St. Petersburg.",
+      "url": "https://www.gutenberg.org/files/2302/2302-h/2302-h.htm",
+      "gutenberg_id": 2302,
+      "category": "Novella"
+    },
+    {
+      "title": "The Double",
+      "year": 1846,
+      "description": "A darkly comic psychological tale of Golyadkin, a government clerk haunted by his exact doppelg\u00e4nger.",
+      "url": "https://www.gutenberg.org/files/2260/2260-h/2260-h.htm",
+      "gutenberg_id": 2260,
+      "category": "Novella"
+    },
+    {
+      "title": "The Gambler",
+      "year": 1867,
+      "description": "A passionate novella about addiction to roulette and destructive love, written to pay off Dostoevsky's own gambling debts.",
+      "url": "https://www.gutenberg.org/files/2197/2197-h/2197-h.htm",
+      "gutenberg_id": 2197,
+      "category": "Novella"
+    },
+    {
+      "title": "The Eternal Husband",
+      "year": 1870,
+      "description": "A psychological study of the strange relationship between a cuckolded husband and his wife's former lover.",
+      "url": "https://www.gutenberg.org/ebooks/5746",
+      "gutenberg_id": 5746,
+      "category": "Novella"
+    },
+    {
+      "title": "Uncle's Dream",
+      "year": 1859,
+      "description": "A satirical novella about provincial society and a scheming woman's attempt to marry her daughter to a senile prince.",
+      "url": "https://www.gutenberg.org/ebooks/5746",
+      "gutenberg_id": 5746,
+      "category": "Novella"
+    },
+    {
+      "title": "The Village of Stepanchikovo",
+      "year": 1859,
+      "description": "Also known as 'The Friend of the Family', a comic novel about a tyrannical buffoon who rules over a household.",
+      "url": "https://www.gutenberg.org/ebooks/5740",
+      "gutenberg_id": 5740,
+      "category": "Novella"
+    },
+    {
+      "title": "The Landlady",
+      "year": 1847,
+      "description": "A gothic romance about a young scholar who falls under the spell of a mysterious woman and her sinister guardian.",
+      "url": "https://www.gutenberg.org/ebooks/8578",
+      "gutenberg_id": 8578,
+      "category": "Novella"
+    }
+        ];
+
+        // Render books
+        function renderBooks(booksToRender = books) {
+            const booksGrid = document.getElementById('booksGrid');
+            const noResults = document.getElementById('noResults');
+            
+            booksGrid.innerHTML = '';
+            
+            if (booksToRender.length === 0) {
+                noResults.classList.add('active');
+                return;
+            }
+            
+            noResults.classList.remove('active');
+            
+            booksToRender.forEach((book, index) => {
+                const bookCard = document.createElement('div');
+                bookCard.className = 'book-card';
+                bookCard.style.animationDelay = `${index * 0.1}s`;
+                
+                bookCard.innerHTML = `
+                    <div class="book-year">${book.year}</div>
+                    <h3 class="book-title">${book.title}</h3>
+                    <p class="book-description">${book.description}</p>
+                    <button class="read-btn" onclick="openBook('${book.title}', '${book.url}')">Read Now</button>
+                `;
+                
+                booksGrid.appendChild(bookCard);
+            });
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredBooks = books.filter(book => 
+                book.title.toLowerCase().includes(searchTerm) ||
+                book.description.toLowerCase().includes(searchTerm)
+            );
+            renderBooks(filteredBooks);
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('bookModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const bookIframe = document.getElementById('bookIframe');
+        const closeModalBtn = document.getElementById('closeModal');
+
+        function openBook(title, url) {
+            modalTitle.textContent = title;
+            bookIframe.src = url;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBook() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            bookIframe.src = '';
+        }
+
+        closeModalBtn.addEventListener('click', closeBook);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeBook();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeBook();
+            }
+        });
+
+        // Initial render
+        renderBooks();
+
+        // Scroll animations observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe book cards on initial load
+        setTimeout(() => {
+            document.querySelectorAll('.book-card').forEach(card => {
+                observer.observe(card);
+            });
+        }, 100);
+    </script>
+</body>
+</html>
