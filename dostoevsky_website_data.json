@@ -1,0 +1,70 @@
+{
+  "major_novels": [
+    {
+      "title": "Crime and Punishment",
+      "year": 1866,
+      "gutenberg_id": 2554
+    },
+    {
+      "title": "The Idiot",
+      "year": 1869,
+      "gutenberg_id": 2638
+    },
+    {
+      "title": "Demons (The Possessed)",
+      "year": 1872,
+      "gutenberg_id": 8117
+    },
+    {
+      "title": "The Brothers Karamazov",
+      "year": 1880,
+      "gutenberg_id": 28054
+    },
+    {
+      "title": "Notes from Underground",
+      "year": 1864,
+      "gutenberg_id": 600
+    },
+    {
+      "title": "The Gambler",
+      "year": 1867,
+      "gutenberg_id": 2197
+    },
+    {
+      "title": "Poor Folk",
+      "year": 1846,
+      "gutenberg_id": 2302
+    },
+    {
+      "title": "The House of the Dead",
+      "year": 1862,
+      "gutenberg_id": 1662
+    }
+  ],
+  "short_stories_collections": [
+    "White Nights and Other Stories",
+    "Short Stories",
+    "An Honest Thief",
+    "The Double",
+    "A Little Hero",
+    "Uncle's Dream",
+    "The Eternal Husband"
+  ],
+  "api_info": {
+    "gutendex_base": "https://gutendex.com/books",
+    "search_dostoevsky": "https://gutendex.com/books?search=dostoevsky",
+    "project_gutenberg_author": "https://www.gutenberg.org/ebooks/author/314"
+  },
+  "design_features": [
+    "Smooth scrolling navigation",
+    "Responsive design for all devices",
+    "Modern animations (fade-in, slide-up)",
+    "Beautiful gradient backgrounds",
+    "Interactive hover effects",
+    "Elegant typography",
+    "Book card layouts",
+    "Reading interface with iframe embedding",
+    "Search functionality",
+    "Pastel color scheme (pink, lavender, cream)"
+  ]
+}
