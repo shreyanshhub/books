@@ -578,137 +578,68 @@
 
     <script>
         // Books data
-        const books = [
+ const books = [
             {
-      "title": "Crime and Punishment",
-      "year": 1866,
-      "description": "A psychological thriller exploring the mind of Raskolnikov, who commits murder and wrestles with guilt, morality, and redemption.",
-      "url": "https://www.gutenberg.org/files/2554/2554-h/2554-h.htm",
-      "gutenberg_id": 2554,
-      "category": "Major Novel"
-    },
-    {
-      "title": "The Brothers Karamazov",
-      "year": 1880,
-      "description": "Dostoevsky's final masterpiece exploring faith, doubt, free will, and morality through the story of three brothers and their father.",
-      "url": "https://www.gutenberg.org/files/28054/28054-h/28054-h.html",
-      "gutenberg_id": 28054,
-      "category": "Major Novel"
-    },
-    {
-      "title": "The Idiot",
-      "year": 1869,
-      "description": "Prince Myshkin, a Christ-like innocent, navigates the corrupt and morally bankrupt Russian aristocracy.",
-      "url": "https://www.gutenberg.org/files/2638/2638-h/2638-h.html",
-      "gutenberg_id": 2638,
-      "category": "Major Novel"
-    },
-    {
-      "title": "The Possessed (Demons)",
-      "year": 1872,
-      "description": "A dark political novel examining nihilism, revolutionary ideology, and the destructive nature of radical movements.",
-      "url": "https://www.gutenberg.org/files/8117/8117-h/8117-h.htm",
-      "gutenberg_id": 8117,
-      "category": "Major Novel"
-    },
-    {
-      "title": "The House of the Dead",
-      "year": 1862,
-      "description": "Based on Dostoevsky's own harrowing experiences in a Siberian labor camp, a profound meditation on suffering and human dignity.",
-      "url": "https://www.gutenberg.org/files/1662/1662-h/1662-h.htm",
-      "gutenberg_id": 1662,
-      "category": "Major Novel"
-    },
-    {
-      "title": "The Insulted and Humiliated",
-      "year": 1861,
-      "description": "A tale of love, betrayal, and the suffering of the downtrodden in 19th century St. Petersburg.",
-      "url": "https://www.gutenberg.org/files/2638/2638-h/2638-h.html",
-      "gutenberg_id": 2638,
-      "category": "Novel"
-    },
-    {
-      "title": "A Raw Youth (The Adolescent)",
-      "year": 1875,
-      "description": "The coming-of-age story of Arkady, an illegitimate son searching for his identity and place in Russian society.",
-      "url": "https://www.gutenberg.org/ebooks/28694",
-      "gutenberg_id": 28694,
-      "category": "Novel"
-    },
-    {
-      "title": "Netochka Nezvanova",
-      "year": 1849,
-      "description": "An unfinished novel following the tragic childhood of a young girl and her experiences with a failed musician.",
-      "url": "https://www.gutenberg.org/ebooks/36034",
-      "gutenberg_id": 36034,
-      "category": "Novel (Unfinished)"
-    }
-  ],
-  "novellas": [
-    {
-      "title": "Notes from Underground",
-      "year": 1864,
-      "description": "One of the first existentialist works, exploring the psychology of alienation through a bitter, isolated narrator.",
-      "url": "https://www.gutenberg.org/files/600/600-h/600-h.htm",
-      "gutenberg_id": 600,
-      "category": "Novella"
-    },
-    {
-      "title": "Poor Folk",
-      "year": 1846,
-      "description": "Dostoevsky's debut novel, an epistolary tale of two poor relatives struggling with poverty and loneliness in St. Petersburg.",
-      "url": "https://www.gutenberg.org/files/2302/2302-h/2302-h.htm",
-      "gutenberg_id": 2302,
-      "category": "Novella"
-    },
-    {
-      "title": "The Double",
-      "year": 1846,
-      "description": "A darkly comic psychological tale of Golyadkin, a government clerk haunted by his exact doppelg\u00e4nger.",
-      "url": "https://www.gutenberg.org/files/2260/2260-h/2260-h.htm",
-      "gutenberg_id": 2260,
-      "category": "Novella"
-    },
-    {
-      "title": "The Gambler",
-      "year": 1867,
-      "description": "A passionate novella about addiction to roulette and destructive love, written to pay off Dostoevsky's own gambling debts.",
-      "url": "https://www.gutenberg.org/files/2197/2197-h/2197-h.htm",
-      "gutenberg_id": 2197,
-      "category": "Novella"
-    },
-    {
-      "title": "The Eternal Husband",
-      "year": 1870,
-      "description": "A psychological study of the strange relationship between a cuckolded husband and his wife's former lover.",
-      "url": "https://www.gutenberg.org/ebooks/5746",
-      "gutenberg_id": 5746,
-      "category": "Novella"
-    },
-    {
-      "title": "Uncle's Dream",
-      "year": 1859,
-      "description": "A satirical novella about provincial society and a scheming woman's attempt to marry her daughter to a senile prince.",
-      "url": "https://www.gutenberg.org/ebooks/5746",
-      "gutenberg_id": 5746,
-      "category": "Novella"
-    },
-    {
-      "title": "The Village of Stepanchikovo",
-      "year": 1859,
-      "description": "Also known as 'The Friend of the Family', a comic novel about a tyrannical buffoon who rules over a household.",
-      "url": "https://www.gutenberg.org/ebooks/5740",
-      "gutenberg_id": 5740,
-      "category": "Novella"
-    },
-    {
-      "title": "The Landlady",
-      "year": 1847,
-      "description": "A gothic romance about a young scholar who falls under the spell of a mysterious woman and her sinister guardian.",
-      "url": "https://www.gutenberg.org/ebooks/8578",
-      "gutenberg_id": 8578,
-      "category": "Novella"
-    }
+                title: "Crime and Punishment",
+                year: 1866,
+                description: "A psychological thriller about a poor student who commits murder and wrestles with guilt and redemption.",
+                url: "https://www.gutenberg.org/files/2554/2554-h/2554-h.htm"
+            },
+            {
+                title: "The Brothers Karamazov",
+                year: 1880,
+                description: "A philosophical novel exploring faith, doubt, morality, and free will through the story of three brothers.",
+                url: "https://www.gutenberg.org/files/28054/28054-h/28054-h.html"
+            },
+            {
+                title: "The Idiot",
+                year: 1869,
+                description: "The story of Prince Myshkin, a Christ-like figure, navigating the complexities of Russian society.",
+                url: "https://www.gutenberg.org/files/2638/2638-h/2638-h.html"
+            },
+            {
+                title: "Notes from Underground",
+                year: 1864,
+                description: "A novella exploring the psychology of alienation and one of the first existentialist works.",
+                url: "https://www.gutenberg.org/files/600/600-h/600-h.htm"
+            },
+            {
+                title: "Demons",
+                year: 1872,
+                description: "A political novel examining nihilism and revolutionary ideology in 19th century Russia.",
+                url: "https://www.gutenberg.org/files/8117/8117-h/8117-h.htm"
+            },
+            {
+                title: "The Gambler",
+                year: 1867,
+                description: "A short novel about a tutor's addiction to roulette and his love for a cruel woman.",
+                url: "https://www.gutenberg.org/files/2197/2197-h/2197-h.htm"
+            },
+            {
+                title: "Poor Folk",
+                year: 1846,
+                description: "Dostoevsky's first novel, an epistolary tale of two poor relatives in St. Petersburg.",
+                url: "https://www.gutenberg.org/files/2302/2302-h/2302-h.htm"
+            },
+            {
+                title: "The House of the Dead",
+                year: 1862,
+                description: "Based on Dostoevsky's own experiences in a Siberian labor camp.",
+                url: "https://www.gutenberg.org/files/1662/1662-h/1662-h.htm"
+            },
+            {
+                title: "White Nights",
+                year: 1848,
+                description: "A sentimental novella about a lonely dreamer's brief romantic encounter.",
+                url: "https://www.gutenberg.org/files/36034/36034-h/36034-h.htm"
+            },
+            {
+                title: "The Double",
+                year: 1846,
+                description: "A darkly comic tale of a government clerk haunted by his doppelgänger.",
+                url: "https://www.gutenberg.org/files/2260/2260-h/2260-h.htm"
+            },
+            
         ];
 
         // Render books
